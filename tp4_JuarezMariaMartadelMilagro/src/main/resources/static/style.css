@@ -1,0 +1,66 @@
+*{
+	margin:0;
+	padding:0;
+	font-family: "Montserrat", sans-serif;
+}
+#imgLogoUnju{
+	width: 15vw;
+	height: auto;
+	margin-left: 3vw;
+}
+
+#imgLogo{
+	width: 10vw;
+	height: 10vw;
+}
+
+header{
+	background: linear-gradient(to left, white, #BF3636);
+	margin-bottom: 1vw;
+}
+
+header div h1{
+	margin-right: 3vw;
+}
+
+#imgMain{
+	width: 100%;
+	height: auto;
+}
+
+.imgCursos{
+	width: 200px;
+	height: 250px;
+}
+
+.imgDestacados{
+	width: 120px;
+	height: 96px;
+}
+
+#videoRecuerdo{
+	width: 100%;
+	height: auto;
+}
+
+.videoCarreras{
+	margin-bottom: 1vw; 
+}
+
+.planEstudio{
+	margin-bottom: 1vw;
+	padding-bottom: 1vw;
+}
+
+footer{
+	background: linear-gradient(to right, white, #BF3636);
+	padding: 2vw;
+	padding-bottom:0;
+	margin-bottom: 0;
+}
+
+#imgFooter{
+	width: 60%;
+	height: auto;
+}
+
