@@ -2,7 +2,7 @@ package ar.edu.unju.fi.model;
 
 public class Carrera {
 
-	private String codigoCarrera;
+	private int codigoCarrera;
 	private String nombreCarrera;
 	private byte cantidadAniosCarrera;
 	private boolean estadoCarrera;
@@ -11,7 +11,7 @@ public class Carrera {
 		super();
 	}
 
-	public Carrera(String codigoCarrera, String nombreCarrera, byte cantidadAniosCarrera, boolean estadoCarrera) {
+	public Carrera(int codigoCarrera, String nombreCarrera, byte cantidadAniosCarrera, boolean estadoCarrera) {
 		super();
 		this.codigoCarrera = codigoCarrera;
 		this.nombreCarrera = nombreCarrera;
@@ -19,11 +19,11 @@ public class Carrera {
 		this.estadoCarrera = estadoCarrera;
 	}
 
-	public String getCodigoCarrera() {
+	public int getCodigoCarrera() {
 		return codigoCarrera;
 	}
 
-	public void setCodigoCarrera(String codigoCarrera) {
+	public void setCodigoCarrera(int codigoCarrera) {
 		this.codigoCarrera = codigoCarrera;
 	}
 

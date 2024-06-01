@@ -2,7 +2,7 @@ package ar.edu.unju.fi.model;
 
 public class Materia {
 
-	private String codigoMateria;
+	private int codigoMateria;
 	private String nombreMateria;
 	private int cursoMateria;
 	private int cantidadHorasMateria;
@@ -11,14 +11,14 @@ public class Materia {
 	private Carrera carreraMateria;
 	
 	public enum Modalidad{
-		VIRTUAL, PRECENCIAL;
+		VIRTUAL, PRESENCIAL;
 	}
 
 	public Materia() {
 		super();
 	}
 
-	public Materia(String codigoMateria, String nombreMateria, int cursoMateria, int cantidadHorasMateria,
+	public Materia(int codigoMateria, String nombreMateria, int cursoMateria, int cantidadHorasMateria,
 			Modalidad modalidadMateria, Docente docenteMateria, Carrera carreraMateria) {
 		super();
 		this.codigoMateria = codigoMateria;
@@ -30,11 +30,11 @@ public class Materia {
 		this.carreraMateria = carreraMateria;
 	}
 
-	public String getCodigoMateria() {
+	public int getCodigoMateria() {
 		return codigoMateria;
 	}
 
-	public void setCodigoMateria(String codigoMateria) {
+	public void setCodigoMateria(int codigoMateria) {
 		this.codigoMateria = codigoMateria;
 	}
 
