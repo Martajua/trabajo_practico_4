@@ -32,8 +32,55 @@ public class MateriaCollection {
 		materias.add(materia6);
 	}
 	
-	private List<Materia> getMaterias(){
+	/**
+	 * getMaterias
+	 * @return lista de materias
+	 */
+	public List<Materia> getMaterias() {
 		return materias;
 	}
 	
+	public static Materia getMateriaByCodigo(int codigo) {
+		return materias.get(codigo);
+	}
+	
+	/**
+	 * buscar materia mediante un codigo pasado por parametro
+	 * @param codigo
+	 * @return
+	 */
+	public static Materia buscarMateria(int codigo) {
+		for (Materia materia : materias) {
+			if(materia.getCodigoMateria() == codigo) {
+				return materia;
+			}
+		}
+		return null;
+	}
+	
+	/**
+	 * modificar materia ingresando un codigo a buscar y la materia a modificar
+	 * @param codigo
+	 * @param nuevaMateria
+	 * @return true si se encontro el codigo y se modifico la materia
+	 * @return false si no se encontro el codigo de la materia
+	 */
+	public static boolean modificarAlumno(int codigo, Materia nuevaMateria) {
+		for(int i = 0; i < materias.size(); i++) {
+			if(materias.get(i).getCodigoMateria() == codigo) {
+				materias.set(i, nuevaMateria);
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	/**
+	 * elimina una materia por un codigo pasado por parametro
+	 * @param codigo
+	 * @return si el codigo es igual al codigo de alguna materia se elimina
+	 */
+	public static boolean eliminarMateria(int codigo) {
+		return materias.removeIf(materia -> materia.getCodigoMateria() == codigo);
+	}
 }

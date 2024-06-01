@@ -31,11 +31,55 @@ public class DocenteCollection {
 		
 	}
 	
+	/**
+	 * getDocentes
+	 * @return lista de docentes
+	 */
 	public List<Docente> getDocentes(){
 		return docentes;
 	}
 	
 	public static Docente getDocenteByLegajo(int id) {
 	        return docentes.get(id);
+	}
+	
+	/**
+	 * busca un docente segun el legajo pasado por parametro
+	 * @param legajo
+	 * @return carrera
+	 */
+	public static Docente buscarDocente(int legajo) {
+		for (Docente docente : docentes) {
+			if (docente.getLegajoDocente() == legajo) {
+				return docente;
+			}
+		}
+		return null;
+	}
+	
+	/**
+	 * modifica docente ingresando el legajo a buscar y el nuevo docente a modificar
+	 * @param legajo
+	 * @param nuevoDocente
+	 * @return true si se encotro el legajo y se modifica el docente
+	 * @return false si no se contro el legajo del docente a modificar
+	 */
+	public static boolean modificarDocente(int legajo, Docente nuevoDocente) {
+		for (int i = 0; i < docentes.size(); i++) {
+			if(docentes.get(i).getLegajoDocente() == legajo) {
+				docentes.set(i, nuevoDocente);
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	/**
+	 * elimina un docente por un legajo pasdo por parametro
+	 * @param legajo
+	 * @return
+	 */
+	public static boolean eliminarDocente(int legajo) {
+		return docentes.removeIf(docente -> docente.getLegajoDocente() == legajo);
 	}
 }
