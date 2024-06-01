@@ -2,6 +2,8 @@ package ar.edu.unju.fi.model;
 
 import java.time.LocalDate;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 public class Alumno {
 
 	private long dniAlumno;
@@ -9,16 +11,17 @@ public class Alumno {
 	private String apellidoAlumno;
 	private String emailAlumno;
 	private long telefonoAlumno;
+	@DateTimeFormat(pattern = "dd-MM-yyyy")
 	private LocalDate fechaNacimientoAlumno; 
 	private String domicilioAlumno;
-	private String luAlumno;
+	private int luAlumno;
 	
 	public Alumno() {
 		super();
 	}
 
 	public Alumno(long dniAlumno, String nombreAlumno, String apellidoAlumno, String emailAlumno, long telefonoAlumno,
-			LocalDate fechaNacimientoAlumno, String domicilioAlumno, String luAlumno) {
+			LocalDate fechaNacimientoAlumno, String domicilioAlumno, int luAlumno) {
 		super();
 		this.dniAlumno = dniAlumno;
 		this.nombreAlumno = nombreAlumno;
@@ -86,11 +89,11 @@ public class Alumno {
 		this.domicilioAlumno = domicilioAlumno;
 	}
 
-	public String getLuAlumno() {
+	public int getLuAlumno() {
 		return luAlumno;
 	}
 
-	public void setLuAlumno(String luAlumno) {
+	public void setLuAlumno(int luAlumno) {
 		this.luAlumno = luAlumno;
 	}
 	
