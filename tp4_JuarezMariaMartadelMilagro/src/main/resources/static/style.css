@@ -64,3 +64,19 @@ footer{
 	height: auto;
 }
 
+/*Formularios*/
+.encabezado{
+    background: linear-gradient(to left, white, #BF3636);
+    margin:0;
+	margin-bottom: 2vw;
+}
+
+.img-encabezado{
+	width: 100%; 
+	height: auto;
+}
+
+.form{
+    padding-top: 2vw;
+    padding-bottom: 2vw;
+}

@@ -1,10 +1,65 @@
 <!DOCTYPE html>
-<html>
-<head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
-</head>
-<body>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
 
+<head data-th-replace="~{/layouts/header :: head}"></head>
+<body>
+	<footer th:fragment="footer" class="py-5">
+		<div class="row">
+			<div class="col-6 col-md-2 mb-3">
+				<img id="imgFooter" alt="imgFooter"
+					data-th-src="@{/images/fce-logo-sinfondo.png}">
+			</div>
+
+			<div class="col-6 col-md-2 mb-3">
+				<h5>Enlaces de Interés</h5>
+				<ul class="nav flex-column">
+					<li class="nav-item mb-2"><a data-th-href="@{/inicio}"
+						class="nav-link p-0 text-body-secondary">Inicio</a></li>
+					<li class="nav-item mb-2"><a data-th-href="@{/acercaDe}"
+						class="nav-link p-0 text-body-secondary">Acerca de</a></li>
+					<li class="nav-item mb-2"><a data-th-href="@{/carrera}"
+						class="nav-link p-0 text-body-secondary">Carreras</a></li>
+					<li class="nav-item mb-2"><a data-th-href="@{/noticia}"
+						class="nav-link p-0 text-body-secondary">Noticias</a></li>
+					<li class="nav-item mb-2"><a data-th-href="@{/contacto}"
+						class="nav-link p-0 text-body-secondary">Contacto</a></li>
+				</ul>
+			</div>
+
+			<div class="col-12 col-md-2 mb-3">
+				<h5>Redes Sociales</h5>
+				<ul class="nav flex-column">
+					<li class="nav-item mb-2"><a
+						href="https://www.facebook.com/fceunju/?ref=embed_page"
+						target="_blank" class="nav-link p-0 text-body-secondary">Facebook</a></li>
+					<li class="nav-item mb-2"><a
+						href="https://www.instagram.com/fceunju/" target="_blank"
+						class="nav-link p-0 text-body-secondary">Instagram</a></li>
+				</ul>
+			</div>
+
+			<div class="col-md-5 offset-md-1 mb-3 text-light">
+				<h5>FACULTAD DE CIENCIAS ECONÓMICAS</h5>
+				<p>Alvear 843 - Barrio Centro - San Salvador de Jujuy</p>
+				<p>
+					Información en general: <a href="info@fce.unju.edu.ar">info@fce.unju.edu.ar</a>
+				</p>
+				<p>
+					Dpto. Alumnos: Teléfono: 0388 - 4221530 - Mail: <a
+						href="dptoalumnos@fce.unju.edu.ar">dptoalumnos@fce.unju.edu.ar</a>
+				</p>
+				<p>
+					Mesa entrada: Teléfono: 0388 - 4221527 - Mail: <a
+						href="mentrada@fce.unju.edu.ar">mentrada@fce.unju.edu.ar</a>
+				</p>
+			</div>
+		</div>
+
+		<div
+			class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+			<p>Copyright &copy; 2024 JUAREZ María Marta del Milagro - APU -
+				Facultad de Ingeniería - UNJu</p>
+		</div>
+	</footer>
 </body>
 </html>

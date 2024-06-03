@@ -1,10 +1,100 @@
 <!DOCTYPE html>
-<html>
-<head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
-</head>
+<html xmlns:th="http://thymeleaf.org" lang="es">
+<head data-th-replace="~{/loyauts/header :: head}"></head>
+
 <body>
+	<div class="py-2 text-center encabezado">
+		<img class="d-block mx-auto mb-4 img-encabezado"
+			data-th-src="@{/images/fce-logo-sinfondo.png}" alt="logo-fce" />
+		<h2>Facultad de Ciencias Ecónimicas</h2>
+	</div>
+	<div class="container">
+		<main>
+			<div class="row g-5">
+				<div class="col-md-5 col-lg-4 order-md-last">
+					<aside data-th-replace="~{/loyauts/aside :: aside}"></aside>
+				</div>
+				<!--FORMULARIO-->
+				<div
+					class="col-md-5 col-lg-8 border border-light-subtle rounded-3 bg-body-secondary form">
+					<h4 class="mb-3">FORMULARIO MATERIA</h4>
+					<h3 data-th-text="${edicion}?'Modificar Materia':'Nueva Materia'"></h3>
+					<form class="needs-validation" novalidate id="materiasForm"
+						th:action="@{/materias/guardar}" th:object="${materia}"
+						method="post">
+						<div class="row g-3">
+							<div class="col-12">
+								<label for="codigo" class="form-label">Codigo</label> <input
+									type="number" class="form-control" id="codigo"
+									th:field="*{codigoMateria}" required />
+							</div>
+
+
+							<div class="col-sm-12">
+								<label for="nombre" class="form-label">Nombre</label> <input
+									type="text" class="form-control" id="nombre"
+									th:field="*{nombreMateria}" required />
+							</div>
+
+							<div class="col-12">
+								<label for="curso" class="form-label">Curso</label> <input
+									type="number" class="form-control" id="curso"
+									th:field="*{cursoMateria}" required />
+							</div>
+
+							<div class="col-12">
+								<label for="cantidadHoras" class="form-label">Cantidad
+									de Horas</label> <input type="number" class="form-control"
+									id="cantidadHoras" th:field="*{cantidadHorasMateria}" required />
+							</div>
+
+							<div class="col-12">
+								<label for="modalidad"> Modalidad</label> 
+								<select
+									id="modalidad" class="form-control"
+									th:field="*{modalidadMateria}">
+									<option Selected>Seleccione una opcion</option>
+									<option th:value="VIRTUAL">VIRTUAL</option>
+									<option th:value="PRESENCIAL">PRESENCIAL</option>
+								</select>
+							</div>
+							
+							<div class="col-12">
+								<label for="profesor">Docente</label> 
+								<select
+									id="profesor" class="form-control"
+									th:field="*{docente.legajoDocente}">
+									<option th:each="docente : ${docentes}"
+										th:text="${docente.nombreDocente}" th:value="${docente.legajoDocente}" />
+								</select>
+							</div>
+							
+							<div class="col-12">
+								<label for="carrera">Carrera</label> 
+								<select
+									id="carrera" class="form-control"
+									th:field="*{carrera.codigoCarrera}">
+									<option th:each="carrera : ${carreras}"
+										th:text="${carrera.nombreCarrera}" th:value="${carrera.codigoCarrera}" />
+								</select>
+							</div>
+
+							<hr class="my-4" />
+							<div class="col-6 container-fluid">
+								<button class="w-100 btn btn-success btn-lg" type="submit">
+									Guardar</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</main>
+	</div>
+
+	<footer data-th-replace="~{/layouts/footer :: footer}"></footer>
+
+	<script type="text/javascript"
+		data-th-src="@{/webjars/bootstrap/js/bootstrap.bundle.min.js}"></script>
 
 </body>
 </html>
