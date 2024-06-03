@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+
+<head data-th-replace="~{/layouts/header :: head}"></head>
+<body>
+	<aside th:fragment="aside">
+		<div class="position-sticky" style="top: 2rem;">
+			<div class="p-4 mb-3 bg-body-tertiary rounded">
+				<h4 class="fst-italic">Recuerdo de los actos y festejos por los
+					60 años de la FCE</h4>
+				<iframe id="videoRecuerdo"
+					src="https://www.youtube.com/embed/GJg_BBEdv6A?si=eantVtbvhxTJmRrh"
+					title="YouTube video player"></iframe>
+			</div>
+
+			<div>
+				<h4 class="fst-italic">Destacados</h4>
+				<ul class="list-unstyled">
+					<li><a
+						class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top"
+						href="https://www.fce.unju.edu.ar/chatinstitucional"
+						target="_blank"> <img class="imgDestacados" alt="Chat"
+							data-th-src="@{/images/destacado1.jpeg}">
+							<div class="col-lg-8">
+								<h6 class="mb-0">Chat Institucional</h6>
+								<small class="text-body-secondary">Viernes, Octubre 27,
+									2023</small>
+							</div>
+					</a></li>
+					<li><a
+						class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top"
+						href="https://www.fce.unju.edu.ar/node/1325" target="_blank">
+							<img class="imgDestacados" alt="CalendarioAcademico"
+							data-th-src="@{/images/destacado2.jpeg}">
+							<div class="col-lg-8">
+								<h6 class="mb-0">Calendario Académico 2024</h6>
+								<small class="text-body-secondary">Lunes, Febrero 19,
+									2024</small>
+							</div>
+					</a></li>
+					<li><a
+						class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top"
+						href="https://www.fce.unju.edu.ar/biblotecadigitalfce"
+						target="_blank"> <img class="imgDestacados"
+							alt="BibliotecaDigital" data-th-src="@{/images/destacado3.jpeg}">
+							<div class="col-lg-8">
+								<h6 class="mb-0">Biblioteca Digital</h6>
+								<small class="text-body-secondary">Martes, Marzo 15,
+									2022</small>
+							</div>
+					</a></li>
+					<li><a
+						class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top"
+						href="https://www.fce.unju.edu.ar/ingreso2024" target="_blank">
+							<img class="imgDestacados" alt="Ingreso"
+							data-th-src="@{/images/destacado4.jpeg}">
+							<div class="col-lg-8">
+								<h6 class="mb-0">INGRESO 2024</h6>
+								<small class="text-body-secondary">Martes, Febrero 6,
+									2024</small>
+							</div>
+					</a></li>
+				</ul>
+			</div>
+		</div>
+	</aside>
+</body>
+</html>

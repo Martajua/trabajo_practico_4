@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org" lang="es">
+<head data-th-replace="~{/loyauts/header :: head}"></head>
+
+<body>
+	<div class="py-2 text-center encabezado">
+		<img class="d-block mx-auto mb-4 img-encabezado"
+			data-th-src="@{/images/fce-logo-sinfondo.png}" alt="logo-fce" />
+		<h2>Facultad de Ciencias Ecónimicas</h2>
+	</div>
+	<div class="container">
+		<main>
+			<div class="row g-5">
+				<div class="col-md-5 col-lg-4 order-md-last">
+					<aside data-th-replace="~{/loyauts/aside :: aside}"></aside>
+				</div>
+				<!--FORMULARIO-->
+				<div
+					class="col-md-5 col-lg-8 border border-light-subtle rounded-3 bg-body-secondary form">
+					<h4 class="mb-3">FORMULARIO DOCENTE</h4>
+					<h3 data-th-text="${edicion}?'Modificar Docente':'Nuevo Docente'"></h3>
+					<form class="needs-validation" novalidate id="docentesForm"
+						th:action="@{/docentes/guardar}" th:object="${docente}"
+						method="post">
+						<div class="row g-3">
+							<div class="col-12">
+								<label for="legajo" class="form-label">Legajo</label> <input
+									type="number" class="form-control" id="legajo"
+									th:field="*{legajoDocente}" required />
+							</div>
+
+
+							<div class="col-sm-12">
+								<label for="nombre" class="form-label">Nombre/s</label> <input
+									type="text" class="form-control" id="nombre"
+									th:field="*{nombreDocente}" required />
+							</div>
+
+							<div class="col-sm-12">
+								<label for="apellido" class="form-label">Apellido/s</label> <input
+									type="text" class="form-control" id="apellido"
+									th:field="*{apellidoDocente}" required />
+							</div>
+
+							<div class="col-12">
+								<label for="email" class="form-label">Email</label> <input
+									type="email" class="form-control" id="email"
+									placeholder="you@example.com" th:field="*{emailDocente}" />
+							</div>
+
+							<div class="col-12">
+								<label for="telefono" class="form-label">Telefono</label> <input
+									type="number" class="form-control" id="telefono"
+									th:field="*{telefonoDocente}" />
+							</div>
+
+							<hr class="my-4" />
+							<div class="col-6 container-fluid">
+								<button class="w-100 btn btn-success btn-lg" type="submit">
+									Guardar</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</main>
+	</div>
+
+	<footer data-th-replace="~{/layouts/footer :: footer}"></footer>
+
+	<script type="text/javascript"
+		data-th-src="@{/webjars/bootstrap/js/bootstrap.bundle.min.js}"></script>
+
+</body>
+</html>

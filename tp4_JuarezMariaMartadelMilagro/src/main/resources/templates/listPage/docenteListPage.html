@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org" lang="es">
+<head data-th-replace="~{/loyauts/header :: head}"></head>
+
+<body>
+	<header data-th-replace="~{/loyauts/header :: header}"></header>
+
+	<div class="container">
+		<main>
+			<section class="py-5 text-center container">
+				<div class="row py-lg-1">
+					<div class="col-lg-6 col-md-8 mx-auto">
+						<h1 class="fw-light">Listado de Docentes</h1>
+						<p class="lead text-body-secondary">Para dar el alta a un
+							nuevo docente presione el siguiente botón</p>
+						<div class="d-grid gap-2 col-6 mx-auto">
+							<button class="btn btn-success btn-lg" type="button">
+								Nuevo Docente</button>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<div
+				class="album py-5 bg-body-secondary border border-light-subtle rounded-3">
+				<div class="container">
+					<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+						<div data-th-each="docente:${docentes}" class="col">
+							<div class="card shadow-sm">
+								<div class="card-body">
+									<h5 data-th-text="${docente.legajoDocente}" class="card-title"></h5>
+									<h6 data-th-text="${docente.nombreDocente + docente.apellidoDocente}" class="card-subtitle mb-2 text-body-secondary"></h6>
+									<ul class="list-group list-group-flush">
+										<li data-th-text="${docente.emailDocente}" class="list-group-item"></li>
+										<li data-th-text="${docente.telefonoDocente}" class="list-group-item"></li>
+										<!--ultimo li vacio para darle la linea de abajo sino editar con css-->
+										<li class="list-group-item"></li>
+									</ul>
+									<div class="d-grid gap-4 d-md-flex justify-content-md-center">
+										<button class="btn btn-danger" data-th-href="@{/docente/eliminar/}+${docente.legajoDocente}" type="button">
+											Eliminar</button>
+										<button class="btn btn-warning" data-th-href="@{/docente/modificar/}+${docente.legajoDocente}" type="button">
+											Modificar</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+	</div>
+
+	<footer data-th-replace="~{/layouts/footer :: footer}"></footer>
+
+	<script type="text/javascript"
+		data-th-src="@{/webjars/bootstrap/js/bootstrap.bundle.min.js}"></script>
+
+</body>
+</html>
