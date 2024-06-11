@@ -39,7 +39,7 @@ public class AlumnoController {
 	public ModelAndView guardarAlumno(@ModelAttribute("alumno") Alumno alumno) {		
 		ModelAndView modelView = new ModelAndView("alumnoListPage");
 		AlumnoCollection.agregarAlumno(alumno);
-		modelView.addObject("alumnoListPage", AlumnoCollection.getAlumnos());	
+		modelView.addObject("alumnos", AlumnoCollection.getAlumnos());	
 		return modelView;
 	}
 	
@@ -61,7 +61,7 @@ public class AlumnoController {
 	
 	
 	@GetMapping("/eliminar/{dni}")
-	public String eliminarMateria(@PathVariable(value="dni") long dni) {
+	public String eliminarAlumno(@PathVariable(value="dni") long dni) {
 		AlumnoCollection.eliminarAlumno(dni);
 		return "redirect:/alumnos/listadoAlumnos";
 	}

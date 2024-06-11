@@ -19,8 +19,8 @@
 						<p class="lead text-body-secondary">Para dar el alta a un
 							nuevo docente presione el siguiente botón</p>
 						<div class="d-grid gap-2 col-6 mx-auto">
-							<button class="btn btn-success btn-lg" type="button">
-								Nuevo Docente</button>
+							<a class="btn btn-success btn-lg" type="button" data-th-href="@{/docentes/nuevo}">
+								Nuevo Docente</a>
 						</div>
 					</div>
 				</div>
@@ -42,9 +42,9 @@
 										<li class="list-group-item"></li>
 									</ul>
 									<div class="d-grid gap-4 d-md-flex justify-content-md-center">
-										<button class="btn btn-danger" data-th-href="@{/docente/eliminar/}+${docente.legajoDocente}" type="button">
+										<button class="btn btn-danger" data-th-href="@{/docentes/eliminar/}+${docente.legajoDocente}" type="button">
 											Eliminar</button>
-										<button class="btn btn-warning" data-th-href="@{/docente/modificar/}+${docente.legajoDocente}" type="button">
+										<button class="btn btn-warning" data-th-href="@{/docentes/modificar/}+${docente.legajoDocente}" type="button">
 											Modificar</button>
 									</div>
 								</div>

@@ -19,7 +19,7 @@
 						<p class="lead text-body-secondary">Para dar el alta a una
 							nueva materia presione el siguiente botón</p>
 						<div class="d-grid gap-2 col-6 mx-auto">
-							<button class="btn btn-success btn-lg" type="button">
+							<button class="btn btn-success btn-lg" type="button" data-th-href="@{/materias/nuevo}">
 								Nueva Materia</button>
 						</div>
 					</div>
@@ -45,9 +45,9 @@
 										<li class="list-group-item"></li>
 									</ul>
 									<div class="d-grid gap-4 d-md-flex justify-content-md-center">
-										<button class="btn btn-danger" data-th-href="@{/materia/eliminar/}+${materia.codigoMateria}" type="button">
+										<button class="btn btn-danger" data-th-href="@{/materias/eliminar/}+${materia.codigoMateria}" type="button">
 											Eliminar</button>
-										<button class="btn btn-warning" data-th-href="@{/materia/modificar/}+${materia.codigoMateria}" type="button">
+										<button class="btn btn-warning" data-th-href="@{/materias/modificar/}+${materia.codigoMateria}" type="button">
 											Modificar</button>
 									</div>
 								</div>

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html xmlns:th="http://thymeleaf.org" lang="es">
-<head data-th-replace="~{/loyauts/header :: head}"></head>
+<head data-th-replace="~{/layouts/header :: head}"></head>
 
 <body>
 	<div class="py-2 text-center encabezado">
@@ -12,7 +12,7 @@
 		<main>
 			<div class="row g-5">
 				<div class="col-md-5 col-lg-4 order-md-last">
-					<aside data-th-replace="~{/loyauts/aside :: aside}"></aside>
+					<aside data-th-replace="~{/layouts/aside :: aside}"></aside>
 				</div>
 				<!--FORMULARIO-->
 				<div
@@ -20,30 +20,30 @@
 					<h4 class="mb-3">FORMULARIO CARRERA</h4>
 					<h3 data-th-text="${edicion}?'Modificar Carrera':'Nueva Carrera'"></h3>
 					<form class="needs-validation" novalidate id="carrerasForm"
-						th:action="@{/carreras/guardar}" th:object="${carrera}"
+						th:action="@{${edicion} ? '/carreras/modificar' : '/carreras/guardar'}" th:object="${carrera}"
 						method="post">
 						<div class="row g-3">
 							<div class="col-12">
-								<label for="codigo" class="form-label">Codigo</label> <input
-									type="number" class="form-control" id="codigo"
+								<label for="codigoCarrera" class="form-label">Codigo</label> <input
+									type="number" class="form-control" id="codigoCarrera"
 									th:field="*{codigoCarrera}" required />
 							</div>
 
 							<div class="col-sm-12">
-								<label for="nombre" class="form-label">Nombre</label> <input
-									type="text" class="form-control" id="nombre"
+								<label for="nombreCarrera" class="form-label">Nombre</label> <input
+									type="text" class="form-control" id="nombreCarrera"
 									th:field="*{nombreCarrera}" required />
 							</div>
 
 							<div class="col-12">
-								<label for="anios" class="form-label">Años</label> <input
-									type="number" class="form-control" id="anios"
+								<label for="cantidadAniosCarrera" class="form-label">Años</label> <input
+									type="number" class="form-control" id="cantidadAniosCarrera"
 									th:field="*{cantidadAniosCarrera}" required />
 							</div>
 
 							<div class="col-12" th:if="${edicion}">
-								<label for="estado">Estado</label> 
-								<select id="estado" class="form-control"
+								<label for="estadoCarrera">Estado</label> 
+								<select id="estadoCarrera" class="form-control"
 									th:field="*{estadoCarrera}">
 									<option Selected>Seleccione una opcion</option>
 									<option th:field="*{estadoCarrera}" th:value="true">Activa</option>

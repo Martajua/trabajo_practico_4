@@ -44,6 +44,9 @@ public class CarreraCollection {
 		return carreras.get(codigo);
 	}
 
+	public static void agregarCarrera(Carrera carrera) {
+		carreras.add(carrera);
+	}
 	/**
 	 * buscar carrera mediante un codigo pasado por parametro
 	 * 
@@ -59,21 +62,14 @@ public class CarreraCollection {
 		return null;
 	}
 	
-	/**
-	 * modificar carrera ingresando el codigo a buscar y la nueva carrera a modificar
-	 * @param codigo 
-	 * @param nuevaCarrera
-	 * @return true si se encontro el codigo y modifico la carrera
-	 * @return false si no se encontro el codigo de carrera a modificar
-	 */
-	public static boolean modificarCarrera(int codigo, Carrera nuevaCarrera) {
-    	for(int i = 0; i < carreras.size(); i++) {
-    		if(carreras.get(i).getCodigoCarrera() == codigo) {
-    			carreras.set(i,nuevaCarrera);
-    			return true;
+	public static void modificarCarrera(Carrera carrera) {
+    	for(Carrera c : carreras) {
+    		if(c.getCodigoCarrera() == carrera.getCodigoCarrera()) {
+    			c.setCantidadAniosCarrera(carrera.getCantidadAniosCarrera());
+    			c.setNombreCarrera(carrera.getNombreCarrera());
+    			c.setEstadoCarrera(carrera.isEstadoCarrera());
     		}
     	}
-    	return false;
     }
 	
 	/**

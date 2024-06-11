@@ -70,26 +70,17 @@ public class AlumnoCollection {
 		return null;
 	}
 
-	/**
-	 * modificar un alumno ingresando su dni y mandando por parametro los datos del
-	 * nuevo alumno
-	 * 
-	 * @param dni
-	 * @param nuevoAlumno
-	 * @return true si se encontro el dni y se modifica el alumno
-	 * @return false si no se encontro el dni del alumno
-	 */
-	public static void modificarAlumno(Alumno nuevoAlumno) {
+	public static void modificarAlumno(Alumno alumno) {
 		for (Alumno a : alumnos) {
-			if (a.getDniAlumno() == nuevoAlumno.getDniAlumno()) {
-				a.setDniAlumno(nuevoAlumno.getDniAlumno());
-				a.setLuAlumno(nuevoAlumno.getLuAlumno());
-				a.setApellidoAlumno(nuevoAlumno.getApellidoAlumno());
-				a.setNombreAlumno(nuevoAlumno.getNombreAlumno());
-				a.setEmailAlumno(nuevoAlumno.getEmailAlumno());
-				a.setDomicilioAlumno(nuevoAlumno.getDomicilioAlumno());
-				a.setFechaNacimientoAlumno(nuevoAlumno.getFechaNacimientoAlumno());
-				a.setTelefonoAlumno(nuevoAlumno.getTelefonoAlumno());
+			if (a.getDniAlumno() == alumno.getDniAlumno()) {
+				a.setDniAlumno(alumno.getDniAlumno());
+				a.setLuAlumno(alumno.getLuAlumno());
+				a.setApellidoAlumno(alumno.getApellidoAlumno());
+				a.setNombreAlumno(alumno.getNombreAlumno());
+				a.setEmailAlumno(alumno.getEmailAlumno());
+				a.setDomicilioAlumno(alumno.getDomicilioAlumno());
+				a.setFechaNacimientoAlumno(alumno.getFechaNacimientoAlumno());
+				a.setTelefonoAlumno(alumno.getTelefonoAlumno());
 			}
 		}
 

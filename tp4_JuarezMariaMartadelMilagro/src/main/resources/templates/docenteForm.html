@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html xmlns:th="http://thymeleaf.org" lang="es">
-<head data-th-replace="~{/loyauts/header :: head}"></head>
+<head data-th-replace="~{/layouts/header :: head}"></head>
 
 <body>
 	<div class="py-2 text-center encabezado">
@@ -12,7 +12,7 @@
 		<main>
 			<div class="row g-5">
 				<div class="col-md-5 col-lg-4 order-md-last">
-					<aside data-th-replace="~{/loyauts/aside :: aside}"></aside>
+					<aside data-th-replace="~{/layouts/aside :: aside}"></aside>
 				</div>
 				<!--FORMULARIO-->
 				<div
@@ -20,37 +20,37 @@
 					<h4 class="mb-3">FORMULARIO DOCENTE</h4>
 					<h3 data-th-text="${edicion}?'Modificar Docente':'Nuevo Docente'"></h3>
 					<form class="needs-validation" novalidate id="docentesForm"
-						th:action="@{/docentes/guardar}" th:object="${docente}"
+						th:action="@{${edicion} ? '/docentes/modificar' : '/docentes/guardar'}" th:object="${docente}"
 						method="post">
 						<div class="row g-3">
 							<div class="col-12">
-								<label for="legajo" class="form-label">Legajo</label> <input
-									type="number" class="form-control" id="legajo"
+								<label for="legajoDocente" class="form-label">Legajo</label> <input
+									type="number" class="form-control" id="legajoDocente"
 									th:field="*{legajoDocente}" required />
 							</div>
 
 
 							<div class="col-sm-12">
-								<label for="nombre" class="form-label">Nombre/s</label> <input
-									type="text" class="form-control" id="nombre"
+								<label for="nombreDocente" class="form-label">Nombre/s</label> <input
+									type="text" class="form-control" id="nombreDocente"
 									th:field="*{nombreDocente}" required />
 							</div>
 
 							<div class="col-sm-12">
-								<label for="apellido" class="form-label">Apellido/s</label> <input
-									type="text" class="form-control" id="apellido"
+								<label for="apellidoDocente" class="form-label">Apellido/s</label> <input
+									type="text" class="form-control" id="apellidoDocente"
 									th:field="*{apellidoDocente}" required />
 							</div>
 
 							<div class="col-12">
-								<label for="email" class="form-label">Email</label> <input
-									type="email" class="form-control" id="email"
+								<label for="emailDocente" class="form-label">Email</label> <input
+									type="email" class="form-control" id="emailDocente"
 									placeholder="you@example.com" th:field="*{emailDocente}" />
 							</div>
 
 							<div class="col-12">
-								<label for="telefono" class="form-label">Telefono</label> <input
-									type="number" class="form-control" id="telefono"
+								<label for="telefonoDocente" class="form-label">Telefono</label> <input
+									type="number" class="form-control" id="telefonoDocente"
 									th:field="*{telefonoDocente}" />
 							</div>
 

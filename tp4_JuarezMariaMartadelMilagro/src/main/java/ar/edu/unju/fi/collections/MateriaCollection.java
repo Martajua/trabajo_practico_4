@@ -60,16 +60,19 @@ public class MateriaCollection {
 		return materias;
 	}
 	
-
+	public static void agregarMateria(Materia materia) {
+		materias.add(materia);
+	}
+	
 	public static Materia getMateriaByCodigo(int codigo) {
 		Materia materia = new Materia();
 		for (Materia m : materias) {
 			if (codigo==m.getCodigoMateria()) {
 				materia=m;
-				break;
+				return materia;
 			}
 		}
-		return materia;
+		return null;
 	}
 	
 
@@ -88,22 +91,17 @@ public class MateriaCollection {
 		return null;
 	}
 
-	/**
-	 * modificar materia ingresando un codigo a buscar y la materia a modificar
-	 * 
-	 * @param codigo
-	 * @param nuevaMateria
-	 * @return true si se encontro el codigo y se modifico la materia
-	 * @return false si no se encontro el codigo de la materia
-	 */
-	public static boolean modificarAlumno(int codigo, Materia nuevaMateria) {
-		for (int i = 0; i < materias.size(); i++) {
-			if (materias.get(i).getCodigoMateria() == codigo) {
-				materias.set(i, nuevaMateria);
-				return true;
+	public static void modificarMateria( Materia materia) {
+		for (Materia m : materias) {
+			if (m.getCodigoMateria() == materia.getCodigoMateria()) {
+				m.setNombreMateria(materia.getNombreMateria());
+				m.setCursoMateria(materia.getCursoMateria());
+				m.setCantidadHorasMateria(materia.getCantidadHorasMateria());;
+				m.setModalidadMateria(materia.getModalidadMateria());;
+				m.setDocenteMateria(materia.getDocenteMateria());
+				m.setCarreraMateria(materia.getCarreraMateria());
 			}
 		}
-		return false;
 	}
 
 	/**

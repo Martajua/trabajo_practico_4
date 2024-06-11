@@ -43,6 +43,10 @@ public class DocenteCollection {
 	        return docentes.get(id);
 	}
 	
+	public static void agregarDocente(Docente docente) {
+		docentes.add(docente);
+	}
+	
 	/**
 	 * busca un docente segun el legajo pasado por parametro
 	 * @param legajo
@@ -57,21 +61,15 @@ public class DocenteCollection {
 		return null;
 	}
 	
-	/**
-	 * modifica docente ingresando el legajo a buscar y el nuevo docente a modificar
-	 * @param legajo
-	 * @param nuevoDocente
-	 * @return true si se encotro el legajo y se modifica el docente
-	 * @return false si no se contro el legajo del docente a modificar
-	 */
-	public static boolean modificarDocente(int legajo, Docente nuevoDocente) {
-		for (int i = 0; i < docentes.size(); i++) {
-			if(docentes.get(i).getLegajoDocente() == legajo) {
-				docentes.set(i, nuevoDocente);
-				return true;
+	public static void modificarDocente(Docente docente) {
+		for (Docente d : docentes) {
+			if(d.getLegajoDocente() == docente.getLegajoDocente()) {
+				d.setApellidoDocente(docente.getApellidoDocente());
+				d.setEmailDocente(docente.getEmailDocente());
+				d.setNombreDocente(docente.getNombreDocente());
+				d.setTelefonoDocente(docente.getTelefonoDocente());
 			}
 		}
-		return false;
 	}
 	
 	/**

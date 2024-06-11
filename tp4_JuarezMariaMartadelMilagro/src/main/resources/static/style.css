@@ -57,6 +57,7 @@ footer{
 	padding: 2vw;
 	padding-bottom:0;
 	margin-bottom: 0;
+	
 }
 
 .imgFooter{
@@ -72,7 +73,7 @@ footer{
 }
 
 .img-encabezado{
-	width: 100%; 
+	width: 10%;
 	height: auto;
 }
 

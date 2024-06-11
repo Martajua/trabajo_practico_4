@@ -19,8 +19,8 @@
 						<p class="lead text-body-secondary">Para dar el alta a una
 							nueva carrera presione el siguiente botón</p>
 						<div class="d-grid gap-2 col-6 mx-auto">
-							<button class="btn btn-success btn-lg" type="button">
-								Nueva Carrera</button>
+							<a class="btn btn-success btn-lg" type="button" data-th-href="@{/carreras/nuevo}">
+								Nueva Carrera</a>
 						</div>
 					</div>
 				</div>
@@ -43,9 +43,9 @@
 										<li class="list-group-item"></li>
 									</ul>
 									<div class="d-grid gap-4 d-md-flex justify-content-md-center">
-										<button class="btn btn-danger" data-th-href="@{/carrera/eliminar/}+${carrera.codigoCarrera}" type="button">
+										<button class="btn btn-danger" data-th-href="@{/carreras/eliminar/}+${carrera.codigoCarrera}" type="button">
 											Eliminar</button>
-										<button class="btn btn-warning" data-th-href="@{/carrera/modificar/}+${carrera.codigoCarrera}" type="button">
+										<button class="btn btn-warning" data-th-href="@{/carreras/modificar/}+${carrera.codigoCarrera}" type="button">
 											Modificar</button>
 									</div>
 								</div>

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html xmlns:th="http://thymeleaf.org" lang="es">
-<head data-th-replace="~{/loyauts/header :: head}"></head>
+<head data-th-replace="~{/layouts/header :: head}"></head>
 
 <body>
 	<div class="py-2 text-center encabezado">
@@ -12,7 +12,7 @@
 		<main>
 			<div class="row g-5">
 				<div class="col-md-5 col-lg-4 order-md-last">
-					<aside data-th-replace="~{/loyauts/aside :: aside}"></aside>
+					<aside data-th-replace="~{/layouts/aside :: aside}"></aside>
 				</div>
 				<!--FORMULARIO-->
 				<div
@@ -20,38 +20,38 @@
 					<h4 class="mb-3">FORMULARIO MATERIA</h4>
 					<h3 data-th-text="${edicion}?'Modificar Materia':'Nueva Materia'"></h3>
 					<form class="needs-validation" novalidate id="materiasForm"
-						th:action="@{/materias/guardar}" th:object="${materia}"
+						th:action="@{${edicion} ? '/materias/modificar' : '/materias/guardar'}" th:object="${materia}"
 						method="post">
 						<div class="row g-3">
 							<div class="col-12">
-								<label for="codigo" class="form-label">Codigo</label> <input
-									type="number" class="form-control" id="codigo"
+								<label for="codigoMateria" class="form-label">Codigo</label> <input
+									type="number" class="form-control" id="codigoMateria"
 									th:field="*{codigoMateria}" required />
 							</div>
 
 
 							<div class="col-sm-12">
-								<label for="nombre" class="form-label">Nombre</label> <input
-									type="text" class="form-control" id="nombre"
+								<label for="nombreMateria" class="form-label">Nombre</label> <input
+									type="text" class="form-control" id="nombreMateria"
 									th:field="*{nombreMateria}" required />
 							</div>
 
 							<div class="col-12">
-								<label for="curso" class="form-label">Curso</label> <input
-									type="number" class="form-control" id="curso"
+								<label for="cursoMateria" class="form-label">Curso</label> <input
+									type="number" class="form-control" id="cursoMateria"
 									th:field="*{cursoMateria}" required />
 							</div>
 
 							<div class="col-12">
-								<label for="cantidadHoras" class="form-label">Cantidad
+								<label for="cantidadHorasMateria" class="form-label">Cantidad
 									de Horas</label> <input type="number" class="form-control"
-									id="cantidadHoras" th:field="*{cantidadHorasMateria}" required />
+									id="cantidadHorasMateria" th:field="*{cantidadHorasMateria}" required />
 							</div>
 
 							<div class="col-12">
-								<label for="modalidad"> Modalidad</label> 
+								<label for="modalidadMateria"> Modalidad</label> 
 								<select
-									id="modalidad" class="form-control"
+									id="modalidadMateria" class="form-control"
 									th:field="*{modalidadMateria}">
 									<option Selected>Seleccione una opcion</option>
 									<option th:value="VIRTUAL">VIRTUAL</option>
