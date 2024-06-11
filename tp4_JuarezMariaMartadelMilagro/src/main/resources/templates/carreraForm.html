@@ -41,15 +41,14 @@
 									th:field="*{cantidadAniosCarrera}" required />
 							</div>
 
-							<div class="col-12" th:if="${edicion}">
-								<label for="estadoCarrera">Estado</label> 
-								<select id="estadoCarrera" class="form-control"
-									th:field="*{estadoCarrera}">
-									<option Selected>Seleccione una opcion</option>
-									<option th:field="*{estadoCarrera}" th:value="true">Activa</option>
-									<option th:field="*{estadoCarrera}" th:value="false">Inactiva</option>
-								</select>
-							</div>
+							    <div class="col-12" >
+                                <label for="estadoCarrera">Estado</label> 
+                                <select id="estadoCarrera" class="form-control" th:field="*{estadoCarrera}">
+                                    <option value="" selected>Seleccione una opción</option>
+                                    <option th:value="'Activa'" th:text="'Activa'"></option>
+                                    <option th:value="'Inactiva'" th:text="'Inactiva'"></option>
+                                </select>
+                            </div>
 
 							<hr class="my-4" />
 							<div class="col-6 container-fluid">
