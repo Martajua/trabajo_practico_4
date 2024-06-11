@@ -11,7 +11,7 @@ import ar.edu.unju.fi.collections.MateriaCollection;
 @RequestMapping("/materias")
 public class MateriaController {
 
-	@GetMapping("listadoMaterias")
+	@GetMapping("/listadoMaterias")
 	public String getPageListMaterias(Model model) {
 		model.addAttribute("titulo", "Listado Materias");
 		model.addAttribute("materias", MateriaCollection.getMaterias());

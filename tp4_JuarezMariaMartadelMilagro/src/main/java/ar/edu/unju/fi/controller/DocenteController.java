@@ -12,7 +12,7 @@ import ar.edu.unju.fi.collections.DocenteCollection;
 @RequestMapping("/docentes")
 public class DocenteController {
 	
-	@GetMapping("listadoDocentes")
+	@GetMapping("/listadoDocentes")
 	public String getPageListDocentes(Model model) {
 		model.addAttribute("titulo","Listado Docentes");
 		model.addAttribute("docentes", DocenteCollection.getDocentes());

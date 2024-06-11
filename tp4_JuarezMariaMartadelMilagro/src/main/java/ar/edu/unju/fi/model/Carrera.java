@@ -53,5 +53,11 @@ public class Carrera {
 	public void setEstadoCarrera(boolean estadoCarrera) {
 		this.estadoCarrera = estadoCarrera;
 	}
+
+	@Override
+	public String toString() {
+		return "Carrera: " + nombreCarrera;
+	}
+	
 	
 }

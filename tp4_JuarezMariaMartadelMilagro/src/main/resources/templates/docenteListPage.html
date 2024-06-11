@@ -33,11 +33,11 @@
 						<div data-th-each="docente:${docentes}" class="col">
 							<div class="card shadow-sm">
 								<div class="card-body">
-									<h5 data-th-text="${docente.legajoDocente}" class="card-title"></h5>
-									<h6 data-th-text="${docente.nombreDocente + docente.apellidoDocente}" class="card-subtitle mb-2 text-body-secondary"></h6>
+									<h5 data-th-text="'Legajo: ' + ${docente.legajoDocente}" class="card-title"></h5>
+									<h6 data-th-text="'Docente: ' + ${docente.nombreDocente + ' ' + docente.apellidoDocente}" class="card-subtitle mb-2 text-body-secondary"></h6>
 									<ul class="list-group list-group-flush">
-										<li data-th-text="${docente.emailDocente}" class="list-group-item"></li>
-										<li data-th-text="${docente.telefonoDocente}" class="list-group-item"></li>
+										<li data-th-text="'Email: ' + ${docente.emailDocente}" class="list-group-item"></li>
+										<li data-th-text="'Telefono: ' + ${docente.telefonoDocente}" class="list-group-item"></li>
 										<!--ultimo li vacio para darle la linea de abajo sino editar con css-->
 										<li class="list-group-item"></li>
 									</ul>

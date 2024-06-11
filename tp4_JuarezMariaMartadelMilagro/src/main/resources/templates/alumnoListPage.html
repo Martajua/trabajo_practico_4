@@ -19,8 +19,8 @@
 						<p class="lead text-body-secondary">Para dar el alta a un
 							nuevo alumno presione el siguiente botón</p>
 						<div class="d-grid gap-2 col-6 mx-auto">
-							<button class="btn btn-success btn-lg" type="button">
-								Nuevo Alumno</button>
+							<a class="btn btn-success btn-lg" type="button" data-th-href="@{/alumnos/nuevo}">
+								Nuevo Alumno</a>
 						</div>
 					</div>
 				</div>
@@ -34,21 +34,21 @@
 							<div class="card shadow-sm">
 								<div class="card-body">
 									<h5 data-th-text="${alumno.dniAlumno}" class="card-title"></h5>
-									<h6 data-th-text="${alumno.nombreAlumno + alumno.apellidoAlumno}" class="card-subtitle mb-2 text-body-secondary"></h6>
+									<h6 data-th-text="${alumno.nombreAlumno + ' ' + alumno.apellidoAlumno}" class="card-subtitle mb-2 text-body-secondary"></h6>
 									<ul class="list-group list-group-flush">
-										<li data-th-text="${alumno.luAlumno}" class="list-group-item"></li>
-										<li data-th-text="${alumno.emailAlumno}" class="list-group-item"></li>
-										<li data-th-text="${alumno.telefonoAlumno}" class="list-group-item"></li>
-										<li data-th-text="${alumno.fechaNacimientoAlumno}" class="list-group-item"></li>
-										<li data-th-text="${alumno.domicilioAlumno}" class="list-group-item"></li>
+										<li data-th-text="'Libreta Universitaria: ' + ${alumno.luAlumno}" class="list-group-item"></li>
+										<li data-th-text="'Email: ' + ${alumno.emailAlumno}" class="list-group-item"></li>
+										<li data-th-text="'Telefono: ' + ${alumno.telefonoAlumno}" class="list-group-item"></li>
+										<li data-th-text="'Fecha de Nacimiento: ' + ${alumno.fechaNacimientoAlumno}" class="list-group-item"></li>
+										<li data-th-text="'Domicilio: ' + ${alumno.domicilioAlumno}" class="list-group-item"></li>
 										<!--ultimo li vacio para darle la linea de abajo sino editar con css-->
 										<li class="list-group-item"></li>
 									</ul>
 									<div class="d-grid gap-4 d-md-flex justify-content-md-center">
-										<button class="btn btn-danger" data-th-href="@{/alumno/eliminar/}+${alumno.dniAlumno}" type="button">
-											Eliminar</button>
-										<button class="btn btn-warning" data-th-href="@{/alumno/modificar/}+${alumno.dniAlumno}" type="button">
-											Modificar</button>
+										<a class="btn btn-danger" data-th-href="@{/alumnos/eliminar/}+${alumno.dniAlumno}" type="button">
+											Eliminar</a>
+										<a class="btn btn-warning" data-th-href="@{/alumnos/modificar/}+${alumno.dniAlumno}" type="button">
+											Modificar</a>
 									</div>
 								</div>
 							</div>

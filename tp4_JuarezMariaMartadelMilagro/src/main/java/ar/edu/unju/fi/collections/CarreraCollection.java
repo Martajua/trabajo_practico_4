@@ -14,12 +14,12 @@ public class CarreraCollection {
 
 	static {
 
-		Carrera carrera1 = new Carrera(031, "Analista Programador Universitario", (byte) 3, false);
-		Carrera carrera2 = new Carrera(123, "Ingenieria Informatica", (byte) 5, true);
-		Carrera carrera3 = new Carrera(983, "Tecnicatura Universitaria en Perforaciones", (byte) 3, true);
-		Carrera carrera4 = new Carrera(273, "Ingeniera Industrial", (byte) 5, false);
-		Carrera carrera5 = new Carrera(198, "Licenciatura en Sistemas", (byte) 5, true);
-		Carrera carrera6 = new Carrera(120, "Ingenieria en Minas", (byte) 5, false);
+		Carrera carrera1 = new Carrera(0, "Analista Programador Universitario", (byte) 3, false);
+		Carrera carrera2 = new Carrera(1, "Ingenieria Informatica", (byte) 5, true);
+		Carrera carrera3 = new Carrera(2, "Tecnicatura Universitaria en Perforaciones", (byte) 3, true);
+		Carrera carrera4 = new Carrera(3, "Ingeniera Industrial", (byte) 5, false);
+		Carrera carrera5 = new Carrera(4, "Licenciatura en Sistemas", (byte) 5, true);
+		Carrera carrera6 = new Carrera(5, "Ingenieria en Minas", (byte) 5, false);
 
 		carreras = new ArrayList<>();
 

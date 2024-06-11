@@ -63,5 +63,11 @@ public class Docente {
 	public void setTelefonoDocente(long telefonoDocente) {
 		this.telefonoDocente = telefonoDocente;
 	}
+
+	@Override
+	public String toString() {
+		return "Docente: " + apellidoDocente + " " + nombreDocente;
+	}
+	
 	
 }

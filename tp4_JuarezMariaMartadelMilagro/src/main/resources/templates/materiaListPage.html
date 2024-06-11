@@ -34,11 +34,11 @@
 							<div class="card shadow-sm">
 								<div class="card-body">
 									<h5 data-th-text="${materia.nombreMateria}" class="card-title"></h5>
-									<h6 data-th-text="${materia.codigoMateria}" class="card-subtitle mb-2 text-body-secondary"></h6>
+									<h6 data-th-text="'Codigo: ' + ${materia.codigoMateria}" class="card-subtitle mb-2 text-body-secondary"></h6>
 									<ul class="list-group list-group-flush">
-										<li data-th-text="${materia.cursoMateria}" class="list-group-item"></li>
-										<li data-th-text="${materia.cantidadHorasMateria}" class="list-group-item"></li>
-										<li data-th-text="${materia.modalidadMateria}" class="list-group-item"></li>
+										<li data-th-text="'Curso: ' + ${materia.cursoMateria} + ' año'" class="list-group-item"></li>
+										<li data-th-text="'Cantidad Horas: ' + ${materia.cantidadHorasMateria}" class="list-group-item"></li>
+										<li data-th-text="'Modalidad: ' + ${materia.modalidadMateria}" class="list-group-item"></li>
 										<li data-th-text="${materia.docenteMateria}" class="list-group-item"></li>
 										<li data-th-text="${materia.carreraMateria}" class="list-group-item"></li>
 										<!--ultimo li vacio para darle la linea de abajo sino editar con css-->
