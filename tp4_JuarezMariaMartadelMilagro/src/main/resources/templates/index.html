@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html xmlns:th="http://thymeleaf.org" lang="es">
-<head data-th-replace="~{/loyauts/header :: head}"></head>
-
+	<head data-th-replace="~{/layouts/header :: head}"></head>
 <body>
-	<header data-th-replace="~{/loyauts/header :: header}"></header>
-
+	<div class="container">
+		<header data-th-replace="~{/layouts/header :: header}"></header>
+		<div class="nav-scroller py-1 mb-3 border-bottom border-top">
+			<nav data-th-replace="~{/layouts/header :: nav}"></nav>
+		</div>
+	</div>
 	<main class="container">
 		<div
 			class="p-4 p-md-5 mb-4 rounded text-body-emphasis bg-body-secondary">
 			<img id="imgMain" alt="fce-65aniversario"
-				data-th-src="@{/images/fce-65aniversario.png}">
+				data-th-src="@{../images/fce-65aniversario.png}">
 			<div class="col-lg-9 px-0">
 				<h1 class="display-4 fst-italic">Facutad de Ciencias Económicas
 					65 años junto a vos.</h1>
@@ -44,7 +47,7 @@
 							Continuar leyendo </a>
 					</div>
 					<div class="col-auto d-none d-lg-block">
-						<img class="imgCursos" alt="taller-1" data-th-src="@{/images/curso1.jpeg}">
+						<img class="imgCursos" alt="taller-1" data-th-src="@{../images/curso1.jpeg}">
 					</div>
 				</div>
 			</div>
@@ -62,7 +65,7 @@
 							Continuar leyendo </a>
 					</div>
 					<div class="col-auto d-none d-lg-block">
-						<img class="imgCursos" alt="taller-1" data-th-src="@{/images/curso2.jpeg}">
+						<img class="imgCursos" alt="taller-1" data-th-src="@{../images/curso2.jpeg}">
 					</div>
 				</div>
 			</div>

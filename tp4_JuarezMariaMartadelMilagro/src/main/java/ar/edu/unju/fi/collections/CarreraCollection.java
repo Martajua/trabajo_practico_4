@@ -36,7 +36,7 @@ public class CarreraCollection {
 	 * 
 	 * @return lista de carreras
 	 */
-	public List<Carrera> getCarreras() {
+	public static List<Carrera> getCarreras() {
 		return carreras;
 	}
 

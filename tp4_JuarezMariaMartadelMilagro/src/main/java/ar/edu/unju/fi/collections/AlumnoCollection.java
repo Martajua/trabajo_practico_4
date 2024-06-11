@@ -35,7 +35,7 @@ public static List<Alumno> alumnos;
 	 * getAlumnos 
 	 * @return lista de alumnos
 	 */
-	public List<Alumno> getAlumnos(){
+	public static List<Alumno> getAlumnos(){
 		return alumnos;
 	}
 	
@@ -79,3 +79,4 @@ public static List<Alumno> alumnos;
 		return alumnos.removeIf(alumno -> alumno.getDniAlumno() == dni);
 	}
 }
+

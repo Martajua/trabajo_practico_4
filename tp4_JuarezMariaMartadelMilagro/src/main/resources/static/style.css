@@ -3,13 +3,13 @@
 	padding:0;
 	font-family: "Montserrat", sans-serif;
 }
-#imgLogoUnju{
+.imgLogoUnju{
 	width: 15vw;
 	height: auto;
 	margin-left: 3vw;
 }
 
-#imgLogo{
+.imgLogo{
 	width: 10vw;
 	height: 10vw;
 }
@@ -59,7 +59,7 @@ footer{
 	margin-bottom: 0;
 }
 
-#imgFooter{
+.imgFooter{
 	width: 60%;
 	height: auto;
 }

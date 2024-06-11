@@ -35,7 +35,7 @@ public class DocenteCollection {
 	 * getDocentes
 	 * @return lista de docentes
 	 */
-	public List<Docente> getDocentes(){
+	public static List<Docente> getDocentes(){
 		return docentes;
 	}
 	

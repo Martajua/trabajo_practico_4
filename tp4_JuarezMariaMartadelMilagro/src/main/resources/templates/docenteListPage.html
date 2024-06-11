@@ -1,9 +1,14 @@
 <!DOCTYPE html>
 <html xmlns:th="http://thymeleaf.org" lang="es">
-<head data-th-replace="~{/loyauts/header :: head}"></head>
+<head data-th-replace="~{/layouts/header :: head}"></head>
 
 <body>
-	<header data-th-replace="~{/loyauts/header :: header}"></header>
+	<div class="container">
+		<header data-th-replace="~{/layouts/header :: header}"></header>
+		<div class="nav-scroller py-1 mb-3 border-bottom border-top">
+			<nav data-th-replace="~{/layouts/header :: nav}"></nav>
+		</div>
+	</div>
 
 	<div class="container">
 		<main>
