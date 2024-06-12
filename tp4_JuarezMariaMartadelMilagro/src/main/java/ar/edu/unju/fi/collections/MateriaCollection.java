@@ -14,7 +14,7 @@ import ar.edu.unju.fi.model.Materia.Modalidad;
 @Service
 public class MateriaCollection {
 
-	public static List<Materia> materias;
+	public static List<Materia> materias = new ArrayList<>();
 
 	/**
 	 * getMaterias
@@ -22,9 +22,7 @@ public class MateriaCollection {
 	 * @return lista de materias
 	 */
 	public static List<Materia> getMaterias() {
-		if (materias == null) {
-            materias = new ArrayList<>();
-        }
+
 		List<Docente> listadoDocente = DocenteCollection.getDocentes();
 		Docente docente1 = listadoDocente.get(0);
 		Docente docente2 = listadoDocente.get(1);
