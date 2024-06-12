@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html xmlns:th="http://thymeleaf.org" lang="es">
-<head data-th-replace="~{/loyauts/header :: head}"></head>
+<head data-th-replace="~{/layouts/header :: head}"></head>
 
 <body>
 	<div class="py-2 text-center encabezado">
@@ -12,7 +12,7 @@
 		<main>
 			<div class="row g-5">
 				<div class="col-md-5 col-lg-4 order-md-last">
-					<aside data-th-replace="~{/loyauts/aside :: aside}"></aside>
+					<aside data-th-replace="~{/layouts/aside :: aside}"></aside>
 				</div>
 				<!--FORMULARIO-->
 				<div
@@ -20,62 +20,62 @@
 					<h4 class="mb-3">FORMULARIO ALUMNO</h4>
 					<h3 data-th-text="${edicion}?'Modificar Alumno':'Nuevo Alumno'"></h3>
 					<form class="needs-validation" novalidate id="alumnosForm"
-						th:action="@{/alumnos/guardar}" th:object="${alumno}"
+						th:action="@{${edicion} ? '/alumnos/modificar' : '/alumnos/guardar'}" th:object="${alumno}"
 						method="post">
 						<div class="row g-3">
 							<div class="col-6">
-								<label for="dni" class="form-label">DNI</label> <input
-									type="number" class="form-control" id="dni"
+								<label for="dniAlumno" class="form-label">DNI</label> <input
+									type="number" class="form-control" id="dniAlumno"
 									th:field="*{dniAlumno}" required />
 							</div>
 
 							<div class="col-6">
-								<label for="lu" class="form-label">Libreta Universitaria</label>
-								<input type="number" class="form-control" id="lu"
+								<label for="luAlumno" class="form-label">Libreta Universitaria</label>
+								<input type="number" class="form-control" id="luAlumno"
 									th:field="*{luAlumno}" required />
 							</div>
 
 							<div class="col-sm-6">
-								<label for="nombre" class="form-label">Nombre/s</label> <input
-									type="text" class="form-control" id="nombre"
+								<label for="nombreAlumno" class="form-label">Nombre/s</label> <input
+									type="text" class="form-control" id="nombreAlumno"
 									th:field="*{nombreAlumno}" required />
 							</div>
 
 							<div class="col-sm-6">
-								<label for="apellido" class="form-label">Apellido/s</label> <input
-									type="text" class="form-control" id="apellido"
+								<label for="apellidoAlumno" class="form-label">Apellido/s</label> <input
+									type="text" class="form-control" id="apellidoAlumno"
 									th:field="*{apellidoAlumno}" required />
 							</div>
 
 							<div class="col-12">
-								<label for="email" class="form-label">Email</label> <input
-									type="email" class="form-control" id="email"
+								<label for="emailAlumno" class="form-label">Email</label> <input
+									type="email" class="form-control" id="emailAlumno"
 									placeholder="you@example.com" th:field="*{emailAlumno}" />
 							</div>
 
 							<div class="col-6">
-								<label for="telefono" class="form-label">Telefono</label> <input
-									type="number" class="form-control" id="telefono"
+								<label for="telefonoAlumno" class="form-label">Telefono</label> <input
+									type="number" class="form-control" id="telefonoAlumno"
 									th:field="*{telefonoAlumno}" />
 							</div>
 
 							<div class="col-6">
-								<label for="direccion" class="form-label">Dirección</label> <input
-									type="text" class="form-control" id="direccion"
+								<label for="domicilioAlumno" class="form-label">Dirección</label> <input
+									type="text" class="form-control" id="domicilioAlumno"
 									placeholder="P. Sherman Calle Wallaby 42, Sidney"
 									th:field="*{domicilioAlumno}" required />
 							</div>
 
 							<div class="col-6">
-								<label for="fechaNacimiento" class="form-label">Fecha de
+								<label for="fechaNacimientoAlumno" class="form-label">Fecha de
 									Nacimiento</label> <input type="date" class="form-control"
-									id="fechaNacimiento" th:field="*{fechaNacimientoAlumno}"
+									id="fechaNacimientoAlumno" th:field="*{fechaNacimientoAlumno}"
 									required />
 							</div>
 
 							<hr class="my-4" />
 							<div class="col-6 container-fluid">
-								<button class="w-100 btn btn-success btn-lg" type="submit">
+								<button type="submit" class="w-100 btn btn-success btn-lg" >
 									Guardar</button>
 							</div>
 						</div>
@@ -84,7 +84,7 @@
 			</div>
 		</main>
 	</div>
-
+	<br>
 	<footer data-th-replace="~{/layouts/footer :: footer}"></footer>
 
 	<script type="text/javascript"

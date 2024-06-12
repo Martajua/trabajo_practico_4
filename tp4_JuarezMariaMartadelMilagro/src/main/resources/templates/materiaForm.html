@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org" lang="es">
+<head data-th-replace="~{/layouts/header :: head}"></head>
+
+<body>
+	<div class="py-2 text-center encabezado">
+		<img class="d-block mx-auto mb-4 img-encabezado"
+			data-th-src="@{/images/fce-logo-sinfondo.png}" alt="logo-fce" />
+		<h2>Facultad de Ciencias Ecónimicas</h2>
+	</div>
+	<div class="container">
+		<main>
+			<div class="row g-5">
+				<div class="col-md-5 col-lg-4 order-md-last">
+					<aside data-th-replace="~{/layouts/aside :: aside}"></aside>
+				</div>
+				<!--FORMULARIO-->
+				<div
+					class="col-md-5 col-lg-8 border border-light-subtle rounded-3 bg-body-secondary form">
+					<h4 class="mb-3">FORMULARIO MATERIA</h4>
+					<h3 data-th-text="${edicion}?'Modificar Materia':'Nueva Materia'"></h3>
+					<form class="needs-validation" novalidate id="materiasForm"
+                          th:action="@{${edicion} ? '/materias/modificar' : '/materias/guardar'}"
+                          th:object="${materia}" method="post">
+                        <div class="row g-3">
+                            <div class="col-12">
+                                <label for="codigoMateria" class="form-label">Código</label>
+                                <input type="number" class="form-control" id="codigoMateria" th:field="*{codigoMateria}" required />
+                            </div>
+
+                            <div class="col-sm-12">
+                                <label for="nombreMateria" class="form-label">Nombre</label>
+                                <input type="text" class="form-control" id="nombreMateria" th:field="*{nombreMateria}" required />
+                            </div>
+
+                            <div class="col-12">
+                                <label for="cursoMateria" class="form-label">Curso</label>
+                                <input type="number" class="form-control" id="cursoMateria" th:field="*{cursoMateria}" required />
+                            </div>
+
+                            <div class="col-12">
+                                <label for="cantidadHorasMateria" class="form-label">Cantidad de Horas</label>
+                                <input type="number" class="form-control" id="cantidadHorasMateria" th:field="*{cantidadHorasMateria}" required />
+                            </div>
+
+                            <div class="col-12">
+                                <label for="modalidadMateria">Modalidad</label>
+                                <select id="modalidadMateria" class="form-control" th:field="*{modalidadMateria}">
+                                    <option value="" disabled selected>Seleccione una opción</option>
+                                    <option th:value="VIRTUAL" th:text="'VIRTUAL'"></option>
+                                    <option th:value="PRESENCIAL" th:text="'PRESENCIAL'"></option>
+                                </select>
+                            </div>
+
+                            <div class="col-12">
+                                <label id="docenteMateria">Docente</label>
+                                <select id="docenteMateria" class="form-select" th:field="*{docenteMateria.legajoDocente}">
+                                    <option data-th-each="docente : ${docentes}" th:value="${docente.legajoDocente}" th:text="${docente.apellidoDocente} + ' ' + ${docente.nombreDocente}"></option>
+                                </select>
+                            </div>
+
+                            <div class="col-12">
+                                <label id="carreraMateria">Carrera</label>
+                                <select id="carreraMateria" class="form-select" th:field="*{carreraMateria.codigoCarrera}">
+                                    <option data-th-each="carrera : ${carreras}" th:value="${carrera.codigoCarrera}" th:text="${carrera.nombreCarrera}"></option>
+                                </select>
+                            </div>
+
+                            <hr class="my-4" />
+                            <div class="col-6 container-fluid">
+                                <button class="w-100 btn btn-success btn-lg" type="submit">Guardar</button>
+                            </div>
+                        </div>
+                    </form>
+				</div>
+			</div>
+		</main>
+	</div>
+
+	<footer data-th-replace="~{/layouts/footer :: footer}"></footer>
+
+	<script type="text/javascript"
+		data-th-src="@{/webjars/bootstrap/js/bootstrap.bundle.min.js}"></script>
+
+</body>
+</html>

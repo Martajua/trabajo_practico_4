@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="es">
-
-<head data-th-replace="~{/layouts/header :: head}"></head>
+	<head data-th-replace="~{/layouts/header :: head}"></head>
 <body>
 	<footer th:fragment="footer" class="py-5">
 		<div class="row">
 			<div class="col-6 col-md-2 mb-3">
-				<img id="imgFooter" alt="imgFooter"
+				<img class="imgFooter" alt="imgFooter"
 					data-th-src="@{/images/fce-logo-sinfondo.png}">
 			</div>
 
@@ -15,13 +14,13 @@
 				<ul class="nav flex-column">
 					<li class="nav-item mb-2"><a data-th-href="@{/inicio}"
 						class="nav-link p-0 text-body-secondary">Inicio</a></li>
-					<li class="nav-item mb-2"><a data-th-href="@{/acercaDe}"
+					<li class="nav-item mb-2"><a data-th-href="@{/}"
 						class="nav-link p-0 text-body-secondary">Acerca de</a></li>
-					<li class="nav-item mb-2"><a data-th-href="@{/carrera}"
+					<li class="nav-item mb-2"><a data-th-href="@{/}"
 						class="nav-link p-0 text-body-secondary">Carreras</a></li>
-					<li class="nav-item mb-2"><a data-th-href="@{/noticia}"
+					<li class="nav-item mb-2"><a data-th-href="@{/}"
 						class="nav-link p-0 text-body-secondary">Noticias</a></li>
-					<li class="nav-item mb-2"><a data-th-href="@{/contacto}"
+					<li class="nav-item mb-2"><a data-th-href="@{/}"
 						class="nav-link p-0 text-body-secondary">Contacto</a></li>
 				</ul>
 			</div>
@@ -61,5 +60,7 @@
 				Facultad de Ingeniería - UNJu</p>
 		</div>
 	</footer>
+		<script type="text/javascript"
+		data-th-src="@{/webjars/bootstrap/js/bootstrap.bundle.min.js}"></script>
 </body>
 </html>

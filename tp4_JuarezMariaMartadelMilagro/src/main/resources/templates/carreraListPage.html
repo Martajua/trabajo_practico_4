@@ -1,9 +1,14 @@
 <!DOCTYPE html>
 <html xmlns:th="http://thymeleaf.org" lang="es">
-<head data-th-replace="~{/loyauts/header :: head}"></head>
+<head data-th-replace="~{/layouts/header :: head}"></head>
 
 <body>
-	<header data-th-replace="~{/loyauts/header :: header}"></header>
+	<div class="container">
+		<header data-th-replace="~{/layouts/header :: header}"></header>
+		<div class="nav-scroller py-1 mb-3 border-bottom border-top">
+			<nav data-th-replace="~{/layouts/header :: nav}"></nav>
+		</div>
+	</div>
 
 	<div class="container">
 		<main>
@@ -14,8 +19,8 @@
 						<p class="lead text-body-secondary">Para dar el alta a una
 							nueva carrera presione el siguiente botón</p>
 						<div class="d-grid gap-2 col-6 mx-auto">
-							<button class="btn btn-success btn-lg" type="button">
-								Nueva Carrera</button>
+							<a class="btn btn-success btn-lg" type="button" data-th-href="@{/carreras/nuevo}">
+								Nueva Carrera</a>
 						</div>
 					</div>
 				</div>
@@ -29,19 +34,18 @@
 							<div class="card shadow-sm">
 								<div class="card-body">
 									<h5 data-th-text="${carrera.nombreCarrera}" class="card-title"></h5>
-									<h6 data-th-text="${carrera.codigoCarrera}" class="card-subtitle mb-2 text-body-secondary"></h6>
+									<h6 data-th-text="'Codigo: '+${carrera.codigoCarrera}" class="card-subtitle mb-2 text-body-secondary"></h6>
 									<ul class="list-group list-group-flush">
-										<li data-th-text="${carrera.cantidadAniosCarrera}+' años'" class="list-group-item"></li>
-										<li th:if="${carrera.estadoCarrera}" class="list-group-item">Activa</li>
-										<li th:if="${!carrera.estadoCarrera}" class="list-group-item">Inactiva</li>
+										<li data-th-text="'Cantidad de años: ' + ${carrera.cantidadAniosCarrera}+' años'" class="list-group-item"></li>
+										<li data-th-text="'Estado: ' + ${carrera.estadoCarrera}" class="list-group-item"></li>
 										<!--ultimo li vacio para darle la linea de abajo sino editar con css-->
 										<li class="list-group-item"></li>
 									</ul>
 									<div class="d-grid gap-4 d-md-flex justify-content-md-center">
-										<button class="btn btn-danger" data-th-href="@{/carrera/eliminar/}+${carrera.codigoCarrera}" type="button">
-											Eliminar</button>
-										<button class="btn btn-warning" data-th-href="@{/carrera/modificar/}+${carrera.codigoCarrera}" type="button">
-											Modificar</button>
+										<a class="btn btn-danger" data-th-href="@{/carreras/eliminar/}+${carrera.codigoCarrera}" type="button">
+											Eliminar</a>
+										<a class="btn btn-warning" data-th-href="@{/carreras/modificar/}+${carrera.codigoCarrera}" type="button">
+											Modificar</a>
 									</div>
 								</div>
 							</div>

@@ -13,12 +13,12 @@ public class DocenteCollection {
 	private static List<Docente> docentes;
 	
 	static {
-		Docente docente1 = new Docente(972, "Carolina", "Apaza", "caroApaza@gmail.com", 154328767);
-		Docente docente2 = new Docente(1052, "Arie", "Vega", "arielVega@gmail.com", 156789332);
-		Docente docente3 = new Docente(1292, "Juan Carlos", "Rodriguez", "jcrodriguez33@gmail.com", 154880234);
-		Docente docente4 = new Docente(1304, "Gustavo", "Sosa", "SosaGustavo@gmail.com", 156784433);
-		Docente docente5 = new Docente(1455, "Alfredo", "Espinoza", "algredo78@gmail.com", 155986745);
-		Docente docente6 = new Docente(908, "Nelida", "Caceres", "nelidaCa23@gmail.com", 154873450);
+		Docente docente1 = new Docente(0, "Carolina", "Apaza", "caroApaza@gmail.com", 154328767);
+		Docente docente2 = new Docente(1, "Ariel", "Vega", "arielVega@gmail.com", 156789332);
+		Docente docente3 = new Docente(2, "Juan Carlos", "Rodriguez", "jcrodriguez33@gmail.com", 154880234);
+		Docente docente4 = new Docente(3, "Gustavo", "Sosa", "SosaGustavo@gmail.com", 156784433);
+		Docente docente5 = new Docente(4, "Alfredo", "Espinoza", "algredo78@gmail.com", 155986745);
+		Docente docente6 = new Docente(5, "Nelida", "Caceres", "nelidaCa23@gmail.com", 154873450);
 		
 		docentes = new ArrayList<>();
 		
@@ -35,12 +35,16 @@ public class DocenteCollection {
 	 * getDocentes
 	 * @return lista de docentes
 	 */
-	public List<Docente> getDocentes(){
+	public static List<Docente> getDocentes(){
 		return docentes;
 	}
 	
 	public static Docente getDocenteByLegajo(int id) {
 	        return docentes.get(id);
+	}
+	
+	public static void agregarDocente(Docente docente) {
+		docentes.add(docente);
 	}
 	
 	/**
@@ -57,21 +61,15 @@ public class DocenteCollection {
 		return null;
 	}
 	
-	/**
-	 * modifica docente ingresando el legajo a buscar y el nuevo docente a modificar
-	 * @param legajo
-	 * @param nuevoDocente
-	 * @return true si se encotro el legajo y se modifica el docente
-	 * @return false si no se contro el legajo del docente a modificar
-	 */
-	public static boolean modificarDocente(int legajo, Docente nuevoDocente) {
-		for (int i = 0; i < docentes.size(); i++) {
-			if(docentes.get(i).getLegajoDocente() == legajo) {
-				docentes.set(i, nuevoDocente);
-				return true;
+	public static void modificarDocente(Docente docente) {
+		for (Docente d : docentes) {
+			if(d.getLegajoDocente() == docente.getLegajoDocente()) {
+				d.setApellidoDocente(docente.getApellidoDocente());
+				d.setEmailDocente(docente.getEmailDocente());
+				d.setNombreDocente(docente.getNombreDocente());
+				d.setTelefonoDocente(docente.getTelefonoDocente());
 			}
 		}
-		return false;
 	}
 	
 	/**

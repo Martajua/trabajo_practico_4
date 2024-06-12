@@ -5,78 +5,106 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import ar.edu.unju.fi.model.Carrera;
+import ar.edu.unju.fi.model.Docente;
 import ar.edu.unju.fi.model.Materia;
 import ar.edu.unju.fi.model.Materia.Modalidad;
 
+
 @Service
 public class MateriaCollection {
-	
-	public static List<Materia> materias;
 
-	static {
-		
-		Materia materia1 = new Materia(023, "Programación Visual", 2, 5, Modalidad.VIRTUAL, DocenteCollection.getDocenteByLegajo(972), CarreraCollection.getCarreraByCodigo(031));
-		Materia materia2 = new Materia(134, "Metodología de la Programación", 1, 6, Modalidad.PRESENCIAL, DocenteCollection.getDocenteByLegajo(1052),CarreraCollection.getCarreraByCodigo(123));
-		Materia materia3 = new Materia(512, "Introducción a las Perforaciones Geológicas", 2, 4, Modalidad.VIRTUAL, DocenteCollection.getDocenteByLegajo(1292),CarreraCollection.getCarreraByCodigo(983));
-		Materia materia4 = new Materia(123, "Redes y Telecomunicaciones", 3, 5, Modalidad.VIRTUAL, DocenteCollection.getDocenteByLegajo(1304),CarreraCollection.getCarreraByCodigo(273));
-		Materia materia5 = new Materia(230, "Aplicaciones de Bases de Datos I", 3, 6, Modalidad.PRESENCIAL, DocenteCollection.getDocenteByLegajo(1455),CarreraCollection.getCarreraByCodigo(198));
-		Materia materia6 = new Materia(402, "Prospección y Exploración", 5, 6, Modalidad.PRESENCIAL, DocenteCollection.getDocenteByLegajo(908),CarreraCollection.getCarreraByCodigo(120));
-		
-		materias = new ArrayList<>();
-		
-		materias.add(materia1);
-		materias.add(materia2);
-		materias.add(materia3);
-		materias.add(materia4);
-		materias.add(materia5);
-		materias.add(materia6);
-	}
-	
+	public static List<Materia> materias = new ArrayList<>();
+
 	/**
 	 * getMaterias
+	 * 
 	 * @return lista de materias
 	 */
-	public List<Materia> getMaterias() {
+	public static List<Materia> getMaterias() {
+
+		List<Docente> listadoDocente = DocenteCollection.getDocentes();
+		Docente docente1 = listadoDocente.get(0);
+		Docente docente2 = listadoDocente.get(1);
+		Docente docente3 = listadoDocente.get(2);
+		Docente docente4 = listadoDocente.get(3);
+		Docente docente5 = listadoDocente.get(4);
+		Docente docente6 = listadoDocente.get(5);
+		
+		List<Carrera> listadoCarrera = CarreraCollection.getCarreras();
+		Carrera carrera1 = listadoCarrera.get(0);
+		Carrera carrera2 = listadoCarrera.get(1);
+		Carrera carrera3 = listadoCarrera.get(2);
+		Carrera carrera4 = listadoCarrera.get(3);
+		Carrera carrera5 = listadoCarrera.get(4);
+		Carrera carrera6 = listadoCarrera.get(5);
+	
+		if(materias.isEmpty()) {
+			materias.add(new Materia(0, "Programación Visual", 2, 5, Modalidad.VIRTUAL,
+					docente1, carrera1));
+			materias.add(new Materia(1, "Metodología de la Programación", 1, 6, Modalidad.PRESENCIAL,
+					docente2, carrera2));
+			materias.add(new Materia(2, "Introducción a las Perforaciones Geológicas", 2, 4, Modalidad.VIRTUAL,
+					docente3, carrera3));
+			materias.add(new Materia(3, "Redes y Telecomunicaciones", 3, 5, Modalidad.VIRTUAL,
+					docente4, carrera4));
+			materias.add(new Materia(4, "Aplicaciones de Bases de Datos I", 3, 6, Modalidad.PRESENCIAL,
+					docente5, carrera5));
+			materias.add(new Materia(5, "Prospección y Exploración", 5, 6, Modalidad.PRESENCIAL,
+					docente6, carrera6));
+			
+		}
+		
 		return materias;
 	}
 	
-	public static Materia getMateriaByCodigo(int codigo) {
-		return materias.get(codigo);
+	public static void agregarMateria(Materia materia) {
+		materias.add(materia);
 	}
 	
-	/**
-	 * buscar materia mediante un codigo pasado por parametro
-	 * @param codigo
-	 * @return
-	 */
-	public static Materia buscarMateria(int codigo) {
-		for (Materia materia : materias) {
-			if(materia.getCodigoMateria() == codigo) {
+	public static Materia getMateriaByCodigo(int codigo) {
+		Materia materia = new Materia();
+		for (Materia m : materias) {
+			if (codigo==m.getCodigoMateria()) {
+				materia=m;
 				return materia;
 			}
 		}
 		return null;
 	}
 	
+
 	/**
-	 * modificar materia ingresando un codigo a buscar y la materia a modificar
+	 * buscar materia mediante un codigo pasado por parametro
+	 * 
 	 * @param codigo
-	 * @param nuevaMateria
-	 * @return true si se encontro el codigo y se modifico la materia
-	 * @return false si no se encontro el codigo de la materia
+	 * @return
 	 */
-	public static boolean modificarAlumno(int codigo, Materia nuevaMateria) {
-		for(int i = 0; i < materias.size(); i++) {
-			if(materias.get(i).getCodigoMateria() == codigo) {
-				materias.set(i, nuevaMateria);
-				return true;
+	public static Materia buscarMateria(int codigo) {
+		for (Materia materia : materias) {
+			if (materia.getCodigoMateria() == codigo) {
+				return materia;
 			}
 		}
-		return false;
+		return null;
 	}
-	
+
+	public static void modificarMateria( Materia materia) {
+		for (Materia m : materias) {
+			if (m.getCodigoMateria() == materia.getCodigoMateria()) {
+				m.setNombreMateria(materia.getNombreMateria());
+				m.setCursoMateria(materia.getCursoMateria());
+				m.setCantidadHorasMateria(materia.getCantidadHorasMateria());;
+				m.setModalidadMateria(materia.getModalidadMateria());;
+				m.setDocenteMateria(materia.getDocenteMateria());
+				m.setCarreraMateria(materia.getCarreraMateria());
+			}
+		}
+	}
+
 	/**
 	 * elimina una materia por un codigo pasado por parametro
+	 * 
 	 * @param codigo
 	 * @return si el codigo es igual al codigo de alguna materia se elimina
 	 */

@@ -1,5 +1,8 @@
 package ar.edu.unju.fi.model;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Docente {
 	private int legajoDocente;
 	private String nombreDocente;
@@ -60,5 +63,11 @@ public class Docente {
 	public void setTelefonoDocente(long telefonoDocente) {
 		this.telefonoDocente = telefonoDocente;
 	}
+
+	@Override
+	public String toString() {
+		return "Docente: " + apellidoDocente + " " + nombreDocente;
+	}
+	
 	
 }

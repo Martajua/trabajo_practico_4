@@ -14,12 +14,12 @@ public class CarreraCollection {
 
 	static {
 
-		Carrera carrera1 = new Carrera(031, "Analista Programador Universitario", (byte) 3, false);
-		Carrera carrera2 = new Carrera(123, "Ingenieria Informatica", (byte) 5, true);
-		Carrera carrera3 = new Carrera(983, "Tecnicatura Universitaria en Perforaciones", (byte) 3, true);
-		Carrera carrera4 = new Carrera(273, "Ingeniera Industrial", (byte) 5, false);
-		Carrera carrera5 = new Carrera(198, "Licenciatura en Sistemas", (byte) 5, true);
-		Carrera carrera6 = new Carrera(120, "Ingenieria en Minas", (byte) 5, false);
+		Carrera carrera1 = new Carrera(0, "Analista Programador Universitario", (byte) 3, "Inactiva");
+		Carrera carrera2 = new Carrera(1, "Ingenieria Informatica", (byte) 5, "Activa");
+		Carrera carrera3 = new Carrera(2, "Tecnicatura Universitaria en Perforaciones", (byte) 3, "Activa");
+		Carrera carrera4 = new Carrera(3, "Ingeniera Industrial", (byte) 5, "Inactiva");
+		Carrera carrera5 = new Carrera(4, "Licenciatura en Sistemas", (byte) 5, "Activa");
+		Carrera carrera6 = new Carrera(5, "Ingenieria en Minas", (byte) 5, "Inactiva");
 
 		carreras = new ArrayList<>();
 
@@ -36,7 +36,7 @@ public class CarreraCollection {
 	 * 
 	 * @return lista de carreras
 	 */
-	public List<Carrera> getCarreras() {
+	public static List<Carrera> getCarreras() {
 		return carreras;
 	}
 
@@ -44,6 +44,9 @@ public class CarreraCollection {
 		return carreras.get(codigo);
 	}
 
+	public static void agregarCarrera(Carrera carrera) {
+		carreras.add(carrera);
+	}
 	/**
 	 * buscar carrera mediante un codigo pasado por parametro
 	 * 
@@ -59,21 +62,14 @@ public class CarreraCollection {
 		return null;
 	}
 	
-	/**
-	 * modificar carrera ingresando el codigo a buscar y la nueva carrera a modificar
-	 * @param codigo 
-	 * @param nuevaCarrera
-	 * @return true si se encontro el codigo y modifico la carrera
-	 * @return false si no se encontro el codigo de carrera a modificar
-	 */
-	public static boolean modificarCarrera(int codigo, Carrera nuevaCarrera) {
-    	for(int i = 0; i < carreras.size(); i++) {
-    		if(carreras.get(i).getCodigoCarrera() == codigo) {
-    			carreras.set(i,nuevaCarrera);
-    			return true;
+	public static void modificarCarrera(Carrera carrera) {
+    	for(Carrera c : carreras) {
+    		if(c.getCodigoCarrera() == carrera.getCodigoCarrera()) {
+    			c.setCantidadAniosCarrera(carrera.getCantidadAniosCarrera());
+    			c.setNombreCarrera(carrera.getNombreCarrera());
+    			c.setEstadoCarrera(carrera.getEstadoCarrera());
     		}
     	}
-    	return false;
     }
 	
 	/**
